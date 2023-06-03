@@ -9,6 +9,9 @@ console.log(PORT)
 //middleware
 const breadsController = require("./controllers/breads_controller.js")
 app.use('/breads',breadsController)
+app.set('views',__dirname + '/views')
+app.set('view engine','jsx')
+app.engine('jsx',require('express-react-views').createEngine())
 
 //Routes
 app.get('/',(req,res)=>{
